@@ -9,13 +9,13 @@ from typing import Optional, Tuple
 
 
 # ===== CONFIGURATION =====
-BOT_TOKEN = "7805793138:AAF6hMaUAsM4ZGBYlkXBg3PwVK_xt6jgGHM"
-OWNER_ID = 6992051618
-OWNER_USERNAME = "Gpx_system"
-OWNER_LINK = "https://t.me/Gpx_system"
-CHANNEL_LINK = "https://whatsapp.com/channel/0029VbBYiUOEquiWtZrSoV1x"
-VORTEX_CHANNEL = "https://t.me/vortexhackingchannel"
-BOT_USERNAME = "Gpx_systems_bot"
+BOT_TOKEN = "8629038583:AAHMT81m1bzOCkTw7g2Fnwlin717TN9ic1U"
+OWNER_ID = 7778746139
+OWNER_USERNAME = "aizen"
+OWNER_LINK = "https://t.me/aizesuigetsu"
+CHANNEL_LINK = "https://whatsapp.com/channel/0029Vb7eSHf42Dcmdd3XA326"
+VAMPIRE_CHANNEL = "https://t.me/darkweb"
+BOT_USERNAME = "Deepseek_ai_new_bot"
 
 POINTS_TO_UNLOCK = 5
 DB_PATH = "bot.db"
@@ -117,7 +117,7 @@ def ask_ai(model_idx: int, question: str) -> str:
         return "🤖 No response from AI"
     except Exception:
         ai_session = None
-        return "⚠️ AI error, please try again!"
+        return "⚠️ Error!, please try again!"
 
 
 # ===== DATABASE =====
@@ -222,7 +222,7 @@ def start(msg: types.Message) -> None:
 
     welcome = f"""
 ╔══════════════════════════╗
-║ ✨ WELCOME TO VORTEX! ✨ ║
+║ ✨ WELCOME TO THE SYSTEM! ✨ ║
 ║  🤖 DeepSeek AI Bot     ║
 ╚══════════════════════════╝
 
@@ -233,7 +233,7 @@ def start(msg: types.Message) -> None:
 ━━━━━━━━━━━━━━━━━━━━━
 
 I can answer questions using **18 different DeepSeek models**! 
-⚡ Powered by the original DeepSeek API bypass.
+⚡ Type In A Command To Start.
 
 📌 **How to use:**
 1️⃣ Select a model from buttons below
@@ -241,7 +241,7 @@ I can answer questions using **18 different DeepSeek models**!
 3️⃣ Use `/model` to change anytime
 4️⃣ Use `/stop` to end conversation
 
-🔔 **Join:** @vortexhackingchannel
+🔔 **Join:** @darkweb info
 """
 
     bar = progress_bar(pts)
@@ -249,7 +249,7 @@ I can answer questions using **18 different DeepSeek models**!
 
     # Channel links
     markup.add(
-        types.InlineKeyboardButton("📢 JOIN VORTEX CHANNEL 🔔", url=VORTEX_CHANNEL),
+        types.InlineKeyboardButton("📢 JOIN CHANNELS 🔔", url=VAMPIRE_CHANNEL),
         types.InlineKeyboardButton("📢 WHATSAPP CHANNEL 👑", url=CHANNEL_LINK),
     )
 
@@ -278,7 +278,7 @@ I can answer questions using **18 different DeepSeek models**!
         types.InlineKeyboardButton("🔧 SELECT MODEL", callback_data="models"),
         types.InlineKeyboardButton("📊 MY STATS", callback_data="stats"),
         types.InlineKeyboardButton("👤 CONTACT OWNER", url=owner_dm),
-        types.InlineKeyboardButton("📢 VORTEX CHANNEL", url=VORTEX_CHANNEL),
+        types.InlineKeyboardButton("📢 CHANNELS", url=VAMPIRE_CHANNEL),
     )
 
     bot.send_message(msg.chat.id, welcome, reply_markup=markup, parse_mode="Markdown")
@@ -428,7 +428,7 @@ Share link with friends to earn points!
             parse_mode="Markdown",
             reply_markup=types.InlineKeyboardMarkup(row_width=1).add(
                 types.InlineKeyboardButton(
-                    "💎 DM OWNER (@Gpx_system)", url=owner_dm
+                    "💎 DM OWNER (@aizesuigetsu)", url=owner_dm
                 ),
                 types.InlineKeyboardButton("👤 OWNER PROFILE", url=OWNER_LINK),
                 types.InlineKeyboardButton("🔙 MAIN MENU", callback_data="menu"),
@@ -538,7 +538,7 @@ def ai_chat(msg: types.Message) -> None:
 {response}
 
 ━━━━━━━━━━━━━━━━━━━━━━━
-💡 *Powered by Vortex DeepSeek API*
+💡 *Powered by VAMPIRE DeepSeek API*
 """
     bot.reply_to(msg, reply, parse_mode="Markdown", disable_web_page_preview=True)
 
@@ -570,7 +570,7 @@ def stop_cmd(msg: types.Message) -> None:
 ╚══════════════════════════╝
 
 💬 Use /start to begin again
-🔔 Join @vortexhackingchannel
+🔔 Join @darkweb
 """
     bot.reply_to(msg, text, parse_mode="Markdown")
 
@@ -581,7 +581,7 @@ def premium_cmd(msg: types.Message) -> None:
     """Grant premium status to a user (owner only)."""
     if msg.from_user.id != OWNER_ID:
         bot.reply_to(
-            msg, "❌ **OWNER ONLY COMMAND**\n👤 @Gpx_system", parse_mode="Markdown"
+            msg, "❌ **OWNER ONLY COMMAND**\n👤 @aizesuigetsu", parse_mode="Markdown"
         )
         return
 
@@ -599,9 +599,9 @@ def premium_cmd(msg: types.Message) -> None:
 
 # ===== ENTRY POINT =====
 if __name__ == "__main__":
-    print("🚀 VORTEX AI BOT - Starting...")
+    print("🚀 AI ENGINE - Starting...")
     print(f"👑 Owner: @{OWNER_USERNAME}")
-    print(f"📢 Channel: @vortexhackingchannel")
+    print(f"📢 Channel: @darkweb")
     print(f"🤖 Models: {len(MODELS)} DeepSeek AI")
 
     db_init()
