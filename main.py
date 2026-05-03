@@ -182,7 +182,7 @@ def can_use(uid: int) -> bool:
 
 
 # ===== OWNER DM LINK =====
-owner_dm = f"https://t.me/{OWNER_ID}"
+owner_dm = f"https://t.me/aizesuigetsu"
 
 
 # ===== START — BEAUTIFUL WELCOME =====
