@@ -14,7 +14,7 @@ OWNER_ID = 7778746139
 OWNER_USERNAME = "aizen"
 OWNER_LINK = "https://t.me/aizesuigetsu"
 CHANNEL_LINK = "https://whatsapp.com/channel/0029Vb7eSHf42Dcmdd3XA326"
-VAMPIRE_CHANNEL = "https://t.me/darkweb"
+VAMPIRE_CHANNEL = "https://t.me/darkweb_techinfo"
 BOT_USERNAME = "Deepseek_ai_new_bot"
 
 POINTS_TO_UNLOCK = 5
@@ -601,7 +601,7 @@ def premium_cmd(msg: types.Message) -> None:
 if __name__ == "__main__":
     print("🚀 AI ENGINE - Starting...")
     print(f"👑 Owner: @{OWNER_USERNAME}")
-    print(f"📢 Channel: @darkweb")
+    print(f"📢 Channel: @darkweb_techinfo")
     print(f"🤖 Models: {len(MODELS)} DeepSeek AI")
 
     db_init()
